@@ -36,5 +36,29 @@ namespace RiskApps
         {
 
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            // To list only csv files, we need to add this filter
+            openFileDialog.Filter = "|*.csv";
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                tbCSVPath.Text = openFileDialog.FileName;
+            }
+
+        }
     }
 }
